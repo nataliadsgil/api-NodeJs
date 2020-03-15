@@ -4,7 +4,6 @@ global.EMAIL_TMPL = 'Olá, <strong>{0}</strong> welcome to Profinder, agora voc�
 
 module.exports = {
     connectionString:'mongodb+srv://ProFinder:profinder@cluster0-tz03r.mongodb.net/test',
-    sendgridKey: '',//Coloque seu código do sendgrid aqui
-    
+    sendgridKey: '',//Coloque seu código do sendgrid aqui    
     containerConnectionString: 'TBD'
 }
