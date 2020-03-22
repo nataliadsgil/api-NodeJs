@@ -33,9 +33,14 @@ const schema = new Schema({
     tag:[{
         type: String,
         require: true
-    }]
+    }],
+    image:{
+        type: String,
+        require: true,
+        trim: true
+    }
 
 });
 
 
-module,exports = mongoose.model('Product',schema);
+module.exports = mongoose.model('Product',schema);

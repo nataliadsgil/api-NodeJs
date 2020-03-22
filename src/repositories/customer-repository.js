@@ -5,31 +5,20 @@ const customers = mongoose.model('customers');
 exports.get = async() => {
     const res = await customers
     .find();
-    
-
-    return res;
-}
-exports.getBySlug = async(slug) =>{
-    const res = await customers
-    .findOne({
-        slug: slug,
-        active:true},'title description price slug tags')   
-        return res;     
-}
-
-exports.getById = async(_id) => {
-    const res = await customers
-    .findById(_id)
     return res;
 }
 
-exports.getByTag = async(tags) =>{
-    const res = await customers
-    .find({
-        tags: tags,
-        active: true
-        }, 'title description price slug tags') 
-    return res;       
+exports.authenticate = async(data) => {
+    const res = await customers.findOne({
+        email: data.email,
+        password: data.password
+    });
+    return res;
+}
+
+exports.getById = async(id) => {
+    const res = await customers.findById(id);
+    return res;
 }
 
 exports.create = async(data) =>{
