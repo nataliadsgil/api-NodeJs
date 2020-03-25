@@ -32,6 +32,7 @@ exports.authorize = function (req, res, next){
 };
 
 exports.isAdmin = function(req, res, next){
+    
     var token = req.body.token || req.query.token || req.headers['x-access-token'];
 
     if(!token){
